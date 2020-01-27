@@ -23,10 +23,11 @@
               <p class="small mb-0">{{ Auth::user()->email }}</p>
             </div>
           </div>
+          <a href="{{ route('login') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active">Dashboard</a>
           <a href="#!" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Projects
             <span class="badge badge-info badge-pill">26</span>
           </a>
-          <a href="#!" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Tasks
+          <a href="{{ route('admin.task') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Tasks
             <span class="badge badge-warning badge-pill">5</span>
           </a>
           <a href="#!" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Completed projects

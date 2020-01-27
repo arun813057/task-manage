@@ -68,7 +68,10 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <!--<a href="{{ url('/home') }}">Home</a>-->
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/login" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

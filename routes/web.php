@@ -32,6 +32,7 @@ function(){
 Route::group([ 'as'=>'admin.', 'prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth','admin']],
 function(){
     Route::get('dashboard','DashboardController@index')->name('deshboard');
+    Route::get('task',function () { return view('admin.task');})->name('task');
 });
 
 
