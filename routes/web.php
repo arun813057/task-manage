@@ -33,9 +33,13 @@ Route::group([ 'as'=>'admin.', 'prefix'=>'admin', 'namespace'=>'Admin', 'middlew
 function(){
     Route::get('dashboard','DashboardController@index')->name('deshboard');
     Route::get('task',function () { return view('admin.task');})->name('task');
+    
 });
 
-
+Route::get('/task','TasksController@add');
+    Route::post('/task','TasksController@create');
+    Route::get('/task/{task}','TasksController@edit');
+    Route::post('/task/{task}','TasksController@update');
 
 /*Route::get('/dashboard-admin', function (){
     return view('layouts.admin.dashboard');

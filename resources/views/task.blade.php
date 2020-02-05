@@ -23,11 +23,11 @@
               <p class="small mb-0">{{ Auth::user()->email }}</p>
             </div>
           </div>
-          <a href="{{ route('login') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active">Dashboard</a>
+          <a href="{{ route('login') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Dashboard</a>
           <a href="#!" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Projects
             <span class="badge badge-info badge-pill">26</span>
           </a>
-          <a href="{{ route('admin.task') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Tasks
+          <a href="{{ route('admin.task') }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active">Tasks
             <span class="badge badge-warning badge-pill">5</span>
           </a>
           <a href="#!" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">Completed projects
@@ -48,7 +48,7 @@
     </div>
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Add New Task</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -57,7 +57,27 @@
                         </div>
                     @endif
 
-                    You are logged in! admin {{ Auth::user()->name }}
+                    <div class="container">
+                
+               
+<form method="POST" action="/task">
+
+    <div class="form-group">
+        <input type="text" name="name" class="form-control">  
+    </div>
+    <div class="form-group">
+        <textarea name="description" class="form-control"></textarea>  
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add Task</button>
+    </div>
+{{ csrf_field() }}
+</form>
+
+
+</div>
                 </div>
             </div>
         </div>
